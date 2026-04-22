@@ -43,39 +43,32 @@ Running The Emulator (emu8086) Intro 8086 Microprocessor Emulator, also known as
 
 ## Programs for Arithmetic  Operations
 
-### Addition  of 8 bit ALP 
 ```
-MOV AX,452AH;
+org 100h
+MOV AX,452AH;  Addition of 16 bit ALP 
 MOV BX,3622H;
 ADD AX,BX;
 MOV [2000H],AX;
-```
 
-### Subtraction   of 8 bit numbers  ALP 
-```
-MOV CX,8372H;
+MOV CX,8372H; Subtraction of 16 bit  ALP 
 MOV DX,9A81H;
 SUB CX,DX;   
 MOV [2002H],CX;
-```
 
-### Multiplication alp 
-```
-MOV AX,6BC1H;
+MOV AX,6BC1H; Multiplication ALP
 MOV DX,8F21H;
 MUL DX;    
 MOV [2004H],AX;
-```
 
-### Division ALP
-```
-MOV AX,3C48H;
+MOV AX,3C48H; Division ALP
 MOV CX,9A81H;
 DIV CX; 
 MOV [2006H],AX;
 MOV [2008H],CX;
-```
 
+ret
+
+```
 ### Output  
 
 <img width="1253" height="802" alt="arithmetic" src="https://github.com/user-attachments/assets/99d490e5-1fae-4106-ae7c-d6e1a7dc78d6" />
@@ -83,64 +76,36 @@ MOV [2008H],CX;
 
 ## Programs for Logical Operations
 
-### AND of 8 bit ALP
 ```
-MOV AX,53B1H;
-MOV BX,8219H;
-AND AX,BX;
-MOV [5000H],AX;
-```
+org 100h
 
-### OR of 8 bit ALP
-```
-MOV CX,44AFH;
-MOV DX,5681;
-OR CX,DX;
-MOV [5004H],CX;
-```
-
-### NOT ALP
-```
-MOV AX,5E13H;
-NOT AX;        
-MOV [5008],AX;
-```
-
-### NAND ALP
-```
-MOV AX,53B1H;
+MOV AX,53B1H; AND ALP
 MOV BX,8219H;
 AND AX,BX;
 MOV [5000H],AX; 
-NOT AX;
+NOT AX; NAND ALP
 MOV [5002H],AX;
-```
 
-### NOR ALP
-```
-MOV CX,44AFH;
+MOV CX,44AFH; OR ALP
 MOV DX,5681;
 OR CX,DX;
 MOV [5004H],CX;
-NOT CX;
+NOT CX; NOR ALP
 MOV [5006H],CX;
-```
 
-### XOR ALP
-```
-MOV AX,8433H;
-MOV BX,5A43H;
-XOR AX,BX;
-MOV [5010H],AX;
-```
-### N-XOR ALP
-```
-MOV AX,8433H;
+MOV AX,5E13H; NOT ALP
+NOT AX; 
+MOV [5008],AX;
+
+
+MOV AX,8433H; XOR ALP
 MOV BX,5A43H;
 XOR AX,BX;
 MOV [5010H],AX;  
-NOT AX;
+NOT AX; N-XOR ALp
 MOV [5012H],AX;
+
+ret
 ```
 
 ### Output
